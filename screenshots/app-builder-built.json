@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Squatter Splatter",
+      "hasCanvas": false,
+      "bodyTextLen": 220,
+      "bodyTextHash": "f42091ae862649b298f2ea84847d83d59db7f93ea7c5565f331de30ad14db3d7",
+      "bodyTextPrefix": "18+ · HORROR CARBY NIGHT WORK Squatter Splatter You are the warr",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Squatter Splatter",
+      "hasCanvas": false,
+      "bodyTextLen": 220,
+      "bodyTextHash": "f42091ae862649b298f2ea84847d83d59db7f93ea7c5565f331de30ad14db3d7",
+      "bodyTextPrefix": "18+ · HORROR CARBY NIGHT WORK Squatter Splatter You are the warr",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

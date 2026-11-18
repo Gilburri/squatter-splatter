@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #12151c;
+  --color-fg: #e6d7c3;
+  --color-muted: #8a8175;
+  --color-blood: #9a1c1c;
+  --color-ochre: #c4622d;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --radius: 2px;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-blood);
+    outline-offset: 2px;
+  }
+}
+
+.poster-card {
+  box-shadow: 8px 8px 0 0 var(--color-blood);
+}
+
+.vig {
+  background: radial-gradient(ellipse at center, transparent 46%, rgba(6, 5, 8, 0.72) 100%);
+}
+
+.vig-gore {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 28%,
+    rgba(90, 8, 8, var(--vig, 0)) 100%
+  );
+}
+
+.flash {
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(160, 24, 20, 0.15) 0%,
+    rgba(90, 8, 8, 0.55) 72%,
+    rgba(20, 0, 0, 0.65) 100%
+  );
+  animation: splatter-flash 520ms ease-out forwards;
+}
+
+.hit-banner {
+  animation: splatter-banner 1100ms ease forwards;
+}
+
+.lens {
+  position: absolute;
+  width: 8.5rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 38%,
+    rgba(150, 22, 18, 0.92),
+    rgba(70, 0, 0, 0.35) 58%,
+    transparent 72%
+  );
+  animation: splatter-flash 1400ms ease forwards;
+}
+
+.lens-a { left: 8%; top: 14%; }
+.lens-b { right: 10%; top: 22%; width: 6rem; height: 8rem; }
+.lens-c { left: 38%; bottom: 16%; width: 7rem; height: 5rem; }
+
+@keyframes splatter-flash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes splatter-banner {
+  0% { opacity: 0; transform: translate(-50%, 8px) scale(0.96); }
+  12% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash,
+  .hit-banner,
+  .lens {
+    animation: none;
+  }
+  .hit-banner { opacity: 1; }
+  .flash, .lens { opacity: 0; }
+}
